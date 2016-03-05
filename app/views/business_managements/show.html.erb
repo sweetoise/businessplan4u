@@ -1,0 +1,62 @@
+<section class="content-header">
+	<h1> Show Data <small>Show Business & Finance Detail</small></h1>
+	<ol class="breadcrumb">
+		<li>
+			<a><i class="fa fa-dashboard"></i> Home</a>
+		</li>
+		<li>
+			<%= link_to 'Business & Finance Details', business_managements_path %>
+		</li>
+		<li class="active">
+			<%= link_to 'Show Business & Finance Detail', @business_management %>
+		</li>
+	</ol>
+</section>
+
+<section class="content">
+	<div class="row">
+		<div class="example-modal">
+			<div class="modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Viewing Business & Finance Detail</h4>
+						</div>
+						<div class="box-body">
+							<div class="show-content-div-top-padding">
+								<div class="form-group">
+									<p class="show-details">
+										<label for="inputEmail" class="control-label col-sm-4"> <b style="color: #3e3e3e; text-transform: capitalize;">Cover Image:</b> </label>
+										<%= image_tag @business_management.image(:thumb) %>
+									</p>
+								</div>
+								<div class="form-group">
+									<p class="show-details">
+										<label for="inputEmail" class="control-label col-sm-4"> <b style="color: #3e3e3e; text-transform: capitalize;">Title:</b> </label>
+										<%= @business_management.title %>
+									</p>
+								</div>
+								<div class="form-group">
+									<p class="show-details" style="text-transform: none;">
+										<label for="inputEmail" class="control-label col-sm-4"> <b style="color: #3e3e3e; text-transform: capitalize;">Description:</b> </label>
+										<%= truncate @business_management.description, length: 200 %>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div><!-- /.box-body -->
+				</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div><!-- /.example-modal -->
+	</div>
+</section>
+
+<section class="content">
+	<!-- Default box -->
+	<div class="box">
+		<div class="box-footer">
+			<%= link_to 'Edit', edit_business_management_path(@business_management), class: 'btn btn-default btn-flat' %> &nbsp;&nbsp;&nbsp;&nbsp;
+			| &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Back', business_managements_path, class: 'btn btn-default btn-flat' %>
+		</div><!-- /.box-footer-->
+	</div><!-- /.box -->
+</section><!-- /.content -->

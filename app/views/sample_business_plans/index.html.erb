@@ -1,0 +1,78 @@
+<section class="content-header">
+	<h1> Sample Business Plans <small>Business Plan table</small></h1>
+	<ol class="breadcrumb">
+		<li>
+			<a><i class="fa fa-dashboard"></i> Home</a>
+		</li>
+		<li class="active">
+			<a>Sample Business Plan</a>
+		</li>
+	</ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="box">
+				<div class="box-header">
+					<h3 class="box-title">Sample Business Plans Data With Full Features</h3>
+				</div><!-- /.box-header -->
+				<div class="box-body">
+					<table id="example1" class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>Business plan Name</th>
+								<th>Status</th>
+								<th>Show content</th>
+								<th>Edit content</th>
+								<th>Delete content</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% @sample_business_plans.each do |sample_business_plan| %>
+							<tr>
+								<td><%= sample_business_plan.title %></td>
+								<% if sample_business_plan.checked.present? %>
+								<td><span class="label label-success">Approved</span></td>
+								<% else %>
+								<td><span class="label label-warning">Pending</span></td>
+								<% end %>
+								<td><%= link_to 'Show', sample_business_plan %></td>
+								<td><%= link_to 'Edit', edit_sample_business_plan_path(sample_business_plan) %></td>
+								<td><%= link_to 'Destroy', sample_business_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+							</tr>
+							<% end %>
+						</tbody>
+						<tfoot>
+							<tr>
+								<th>Business plan Name</th>
+								<th>Status</th>
+								<th>Show content</th>
+								<th>Edit content</th>
+								<th>Delete content</th>
+							</tr>
+						</tfoot>
+					</table>
+				</div><!-- /.box-body -->
+			</div><!-- /.box -->
+		</div><!-- /.col -->
+	</div><!-- /.row -->
+
+	<!-- Default box -->
+	<div class="box">
+		<div class="box-footer">
+			<!-- Block buttons -->
+			<div class="box-header">
+				<h3 class="box-title">New Sample Business Plan</h3>
+			</div>
+			<div class="box-body">
+				<div class="add-inst">
+					<%= link_to '+  ADD Sample Business Plan', new_sample_business_plan_path, :class => 'btn btn-primary btn-block' %>
+				</div>
+			</div>
+		</div><!-- /.box-footer-->
+	</div><!-- /.box -->
+</section>
+

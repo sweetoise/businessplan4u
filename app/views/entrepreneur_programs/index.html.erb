@@ -1,0 +1,73 @@
+<section class="content-header">
+	<h1> Entrepreneurship Programmes <small>Entrepreneurship Programmes table</small></h1>
+	<ol class="breadcrumb">
+		<li>
+			<a><i class="fa fa-dashboard"></i> Home</a>
+		</li>
+		<li class="active">
+			<a>Entrepreneurship Programme</a>
+		</li>
+	</ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="box">
+				<div class="box-header">
+					<h3 class="box-title">Entrepreneurship Programme Data With Full Features</h3>
+				</div><!-- /.box-header -->
+				<div class="box-body">
+					<table id="example1" class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>Topic</th>
+								<th>Description</th>
+								<th>Show content</th>
+								<th>Edit content</th>
+								<th>Delete content</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% @entrepreneur_programs.each do |entrepreneur_program| %>
+							<tr>
+								<td><%= entrepreneur_program.topic %></td>
+								<td><%= truncate entrepreneur_program.description, length: 75 %></td>
+								<td><%= link_to 'Show', entrepreneur_program %></td>
+								<td><%= link_to 'Edit', edit_entrepreneur_program_path(entrepreneur_program) %></td>
+								<td><%= link_to 'Destroy', entrepreneur_program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+							</tr>
+							<% end %>
+						</tbody>
+						<tfoot>
+							<tr>
+								<th>Topic</th>
+								<th>Description</th>
+								<th>Show content</th>
+								<th>Edit content</th>
+								<th>Delete content</th>
+							</tr>
+						</tfoot>
+					</table>
+				</div><!-- /.box-body -->
+			</div><!-- /.box -->
+		</div><!-- /.col -->
+	</div><!-- /.row -->
+
+	<!-- Default box -->
+	<div class="box">
+		<div class="box-footer">
+			<!-- Block buttons -->
+			<div class="box-header">
+				<h3 class="box-title">New Entrepreneurship Programme Detail</h3>
+			</div>
+			<div class="box-body">
+				<div class="add-inst">
+					<%= link_to '+  ADD DETAILS', new_entrepreneur_program_path, :class => 'btn btn-primary btn-block' %>
+				</div>
+			</div>
+		</div><!-- /.box-footer-->
+	</div><!-- /.box -->
+</section>
+

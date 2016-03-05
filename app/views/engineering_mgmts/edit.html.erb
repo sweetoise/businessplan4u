@@ -1,0 +1,31 @@
+<section class="content-header">
+	<h1> Edit Data <small>Edit Engineering & Project Mgmt</small></h1>
+	<ol class="breadcrumb">
+		<li>
+			<a><i class="fa fa-dashboard"></i> Home</a>
+		</li>
+		<li>
+			<%= link_to 'Engineering & Project Mgmts', engineering_mgmts_path %>
+		</li>
+		<li class="active">
+			<%= link_to 'Edit Engineering & Project Mgmt', edit_engineering_mgmt_path(@engineering_mgmt) %>
+		</li>
+	</ol>
+</section>
+
+<section class="content">
+	<div class="row">
+		<div class="example-modal">
+			<div class="modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Editing Engineering & Project Mgmt</h4>
+						</div>
+						<%= render 'edit_form' %>
+					</div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+			</div><!-- /.example-modal -->
+		</div>
+</section>
+

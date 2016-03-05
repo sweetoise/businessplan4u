@@ -1,0 +1,70 @@
+<%= simple_form_for((@sample_business_plan), html: { class: "form-horizontal"}) do |f| %>
+
+<% if @sample_business_plan.errors.any? %>
+<div class="box-body">
+	<div class="callout callout-warning">
+		<h4><i class="icon fa fa-warning"></i> Error Alert!</h4>
+	</div>
+</div><!-- /.box-body -->
+<% end %>
+
+<% if @sample_business_plan.errors.any?  %>
+<ul>
+	<% @sample_business_plan.errors.full_messages.each do |msg| %>
+	<li>
+		<%= msg %>
+	</li>
+	<% end %>
+</ul>
+<% end %>
+
+<div class="modal-body">
+	<div class="box-body">
+		<!-- Horizontal Form -->
+		<!-- form start -->
+		<div class="box-body">
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-4 control-label">Sample Business Plan</label>
+				<div class="col-sm-7">
+					<%= f.input :title, :label => false, :placeholder => "Enter Title ", input_html: { class: 'form-control form-control-input', id: 'inputEmail3' } %>
+				</div>
+			</div>
+			<% if @sample_business_plan.image.blank? %>
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-4 control-label">Upload Image</label>
+				<div class="col-sm-4">
+					<%= f.file_field :image, class: 'btn btn-default pull-left' %>
+				</div>
+			</div>
+			<% else %>
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-4 control-label">Change Image</label>
+				<div class="col-sm-4">
+					<%= f.file_field :image, class: 'btn btn-default pull-left' %>
+				</div>
+			</div>
+			<% end %>
+			<div class="form-group">
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-4 control-label">Allow Viewable</label>
+					<div class="col-sm-7">
+						<div class="checkbox">
+							<label><%= f.check_box :checked, :label => false %>Show business plan</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- /.box-body -->
+</div>
+<div class="modal-footer">
+	<div class="form-actions">
+		<%= link_to 'Back', sample_business_plans_path, class: 'btn btn-default pull-left' %>
+	</div>
+	<div class="form-actions">
+		<%= f.button :submit, class: 'btn btn-primary' %>
+	</div>
+</div>
+</div><!-- /.modal-content -->
+<% end %>
+

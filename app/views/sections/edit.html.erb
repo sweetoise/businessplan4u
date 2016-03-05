@@ -1,0 +1,33 @@
+<section class="content-header">
+	<h1> Edit Data <small>Edit Section</small></h1>
+	<ol class="breadcrumb">
+		<li>
+			<a><i class="fa fa-dashboard"></i> Home</a>
+		</li>
+		<li>
+			<%= link_to 'Sections', sections_path %>
+		</li>
+		<li class="active">
+			<%= link_to 'Edit Section', edit_section_path(@section) %>
+		</li>
+	</ol>
+</section>
+
+<section class="content">
+	<div class="row">
+		<div class="example-modal">
+			<div class="modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Editing Section</h4>
+						</div>
+						<%= render 'edit_form' %>
+					</div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+			</div><!-- /.example-modal -->
+		</div>
+</section>
+
+<%= render 'users/javascripts' %>
+

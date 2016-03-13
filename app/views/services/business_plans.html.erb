@@ -104,23 +104,22 @@
 					</p>
 					<hr>
 					<div class="row">
-						<ul class="list-serv">
-							<% if @sample_business_plans.present? %>
-							<% @sample_business_plans.each do |samps| %>
-							<li class="span4">
-								<div class="badge_2 badge"></div>
-								<% if samps.checked? == true %>
-								<div class="overflow">
-									<h4 style="text-transform: uppercase;"><%= link_to samps.title, :controller => 'samples', :action => 'show', :id => samps.id %></h4>
-									<p>
-										<%= samps.description %>
-									</p>
-								</div>
+						<div class="span8">
+							<ul class="thumbnails2 clearfix row">
+								<% if @sample_business_plans.present? %>
+								<% @sample_business_plans.each do |samps| %>
+								<% if samps.checked? %>
+								<li class="span4">
+									<div class="services">
+										<h4 style="text-transform: uppercase;"><%= link_to samps.title, :controller => 'samples', :action => 'show', :id => samps.id %></h4>
+									</div>
+								</li>
+								<% else %>
 								<% end %>
-							</li>
-							<% end %>
-							<% end %>
-						</ul>
+								<% end %>
+								<% end %>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>

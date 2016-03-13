@@ -3,6 +3,8 @@
 	<head>
 		<%= csrf_meta_tags %>
 		<title>e-coursestudy :: Administrator</title>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
 		<!-- Tell the browser to be responsive to screen width -->
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -13,7 +15,7 @@
 		<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 		<!-- Theme style -->
 		<link href='<%= asset_path('AdminLTE.min.scss') %>' rel="stylesheet">
-		
+
 		<link href='<%= asset_path('dataTables.bootstrap.scss') %>' rel="stylesheet">
 
 		<link href='<%= asset_path('changes.scss') %>' rel="stylesheet">
@@ -58,7 +60,7 @@
 			<%= render 'layouts/adminpanel_footer' %>
 			<!-- jQuery 2.1.4 -->
 			<script src='<%= asset_path('jQuery-2.1.4.min.js') %>'></script>
-			
+
 			<!-- Bootstrap 3.3.5 -->
 			<script src='<%= asset_path('bootstrap.min.js') %>'></script>
 
@@ -77,14 +79,14 @@
 			<!-- page script -->
 			<script>
 				$(function() {
-					$("#example1").DataTable();
-					$('#example2').DataTable();
-					$("#example3").DataTable();
-					$("#example4").DataTable();
-					$("#example5").DataTable();
-					$("#example6").DataTable();
-					$("#example7").DataTable();
-					$("#example8").DataTable();
+				$("#example1").DataTable();
+				$('#example2').DataTable();
+				$("#example3").DataTable();
+				$("#example4").DataTable();
+				$("#example5").DataTable();
+				$("#example6").DataTable();
+				$("#example7").DataTable();
+				$("#example8").DataTable();
 				});
 			</script>
 	</body>

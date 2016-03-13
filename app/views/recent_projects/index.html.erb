@@ -33,7 +33,7 @@
 							<% @recent_projects.each do |recent_project| %>
 							<tr>
 								<td><%= recent_project.title %></td>
-								<td><%= truncate recent_project.description, length: 100 %></td>
+								<td><%= truncate recent_project.description, length: 50 %></td>
 								<td><%= link_to 'Show', recent_project %></td>
 								<td><%= link_to 'Edit', edit_recent_project_path(recent_project) %></td>
 								<td><%= link_to 'Destroy', recent_project, method: :delete, data: { confirm: 'Are you sure?' } %></td>

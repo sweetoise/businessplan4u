@@ -33,7 +33,7 @@
 							<% @our_advantages.each do |our_advantage| %>
 							<tr>
 								<td><%= our_advantage.title %></td>
-								<td><%= truncate our_advantage.description, length: 100 %></td>
+								<td><%= truncate our_advantage.description, length: 50 %></td>
 								<td><%= link_to 'Show', our_advantage %></td>
 								<td><%= link_to 'Edit', edit_our_advantage_path(our_advantage) %></td>
 								<td><%= link_to 'Destroy', our_advantage, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require jquery-2.1.1.min
 //= require jquery.countdown.min
 //= require jQuery-2.1.4.min

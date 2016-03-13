@@ -30,7 +30,6 @@
 					<p class="text-muted text-center">
 						<%= @user.roles.first.name.titleize %>
 					</p>
-
 					<b class="bold-delete-link"><%= link_to 'Delete User',@user, :class => 'btn btn-primary btn-block', method: :delete, data: { confirm: 'Are you sure?' } unless @user == current_user %></b>
 				</div><!-- /.box-body -->
 			</div><!-- /.box -->

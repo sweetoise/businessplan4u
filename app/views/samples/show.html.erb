@@ -69,41 +69,41 @@
 					<ul class="thumbnails2 clearfix row">
 						<li class="span4">
 							<div class="thumbnail services maxheight2">
-								<img src="../assets/acct4.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/page3_img1.jpg" alt="">
+								<img src="<%= @sample_business_plan.image if @sample_business_plan.present? %>" tppabs="http://livedemo00.template-help.com/wt_44757/img/page3_img1.jpg" alt="">
 								<div class="caption maxheight">
-									<h4><a>Our Financial Management Scheme.</a>
+									<h4><a><%= @sample_business_plan.title if @sample_business_plan.present? %></a>
 									<br>
 									</h4>
-									<p>
-										We provide specialist support for existing and new organizations
-									</p>
+									<p></p>
 								</div>
 							</div>
 						</li>
 					</ul>
 				</div>
 				<div class="span8 solutions">
-					<h2>Business - Financial Management</h2>
+					<h2 style="padding-left: 9%;"><%= @sample_business_plan.title if @sample_business_plan.present? %></h2>
+					<hr>
 					<p>
-						We support organizations through analysis of existing problems, develop plans for improvement
-						to enable them to maximize their performance and deliver growth through increased revenues and reduced costs.
-						<br>
-					<p>
-						<b>Our provision for specialist support for existing and new organizations include:</b>
-					</p>
-					</p>
-					<p>
-						&nbsp;&nbsp;--Financial Forecasting and Planning
-						<br>
-						&nbsp;&nbsp;--Business Planning
-						<br>
-						&nbsp;&nbsp;--Business Modeling
-						<br>
-						&nbsp;&nbsp;--Financial Due Diligence
-						<br>
-						&nbsp;&nbsp;--Development Of Business Cases
-						<br>
-						&nbsp;&nbsp;--Financial Controls and Systems Development
+						<div class="row">
+							<ul class="list-serv">
+								<% if @sample_business_plan.present? %>
+								<% @sample_business_plan.sections.each do |sect| %>
+								<li class="spin" style="padding-left: 13%;">
+									<div class="badge_2 badge"></div>
+									<div class="overflow">
+										<h4><a style="text-transform: uppercase; font-size: 1.1em;"><%= sect.name %></a></h4>
+										<p>
+											<% sect.topics.each do |top| %>
+											&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; font-size: 0.98em; text-transform: capitalize;"><%= top.number %> &nbsp; <%= top.title %></span>
+											<br>
+											<% end %>
+										</p>
+									</div>
+								</li>
+								<% end %>
+								<% end %>
+							</ul>
+						</div>
 					</p>
 				</div>
 			</div>

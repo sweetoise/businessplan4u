@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'programme/employment_skills'
-  get 'programme/outsourcing'
-  get 'programme/personal_coaching'
-  get 'programme/finance_management'
-
+  get 'samples/show'
   get 'contact_us/index'
-
   get 'offered_solutions/index'
+  
 
   get 'services/index'
   get 'services/overview'
@@ -17,6 +13,8 @@ Rails.application.routes.draw do
   get 'services/engineering_designs'
   get 'services/financial_management'
   get 'services/solar_energy_consulting'
+  get 'services/business_modeling'
+
 
   get 'about_us/index'
 

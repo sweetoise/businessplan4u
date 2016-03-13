@@ -8,6 +8,7 @@ class ServicesController < ApplicationController
   end
 
   def business_plans
+    @sample_business_plans = SampleBusinessPlan.all
   end
 
   def entrepreneurship
@@ -23,6 +24,8 @@ class ServicesController < ApplicationController
   end
 
   def solar_energy_consulting
+  end
 
+  def business_modeling
   end
 end

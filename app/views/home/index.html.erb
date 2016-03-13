@@ -75,7 +75,7 @@
 				<div class="container">
 					<h1 class="brand"><a href="<%= root_path %>" tppabs="http://livedemo00.template-help.com/wt_44757/index.html"><img alt="Stream" src=" ../assets/logo.png" tppabs="http://livedemo00.template-help.com/wt_44757/img/logo.png"></a></h1>
 					<div class="headphone">
-						<span class="admin_login_link"><%= link_to 'Login', new_user_session_path %></span>&nbsp; | &nbsp;Call us:<strong>+234-806-066-6033</strong>
+						<span class="admin_login_link"><%= link_to 'Login', new_user_session_path %></span>&nbsp; | &nbsp;Call us:<strong>+234-xxx-xxx-xxxx</strong>
 					</div>
 				</div>
 			</div>
@@ -101,25 +101,23 @@
 												<a href="/services/business_plans">Business Plans</a>
 											</li>
 											<li>
-												<a>Implementation</a>
-												<ul>
-													<li>
-														<a href="/services/entrepreneurship">Entrepreneurship</a>
-													</li>
-													<li>
-														<a href="/services/project_management">Project management</a>
-													</li>
-													<li>
-														<a href="/services/engineering_designs">Engineering designs</a>
-													</li>
-													<li>
-														<a href="/services/financial_management">Financial management</a>
-													</li>
-													<li>
-														<a href="/services/solar_energy_consulting">Solar energy services</a>
-													</li>
-												</ul>
+
+											<li>
+												<a href="/services/entrepreneurship">Entrepreneurship</a>
 											</li>
+											<li>
+												<a href="/services/project_management">Project management</a>
+											</li>
+											<li>
+												<a href="/services/engineering_designs">Engineering designs</a>
+											</li>
+											<li>
+												<a href="/services/financial_management">Financial management</a>
+											</li>
+											<li>
+												<a href="/services/solar_energy_consulting">Solar energy services</a>
+											</li>
+
 										</ul>
 									</li>
 									<li>
@@ -139,15 +137,15 @@
 								<div class="camera_caption fadeIn">
 									<div class="camera_caption_bg">
 										<p>
-											You `ll be
+											We develop
 											<br>
-											satisfied
+											bankable
 											<br>
-											by the high<strong>quality</strong>
+											<strong>business plans</strong>
 										</p>
-										<span>of our goods
+										<span>You'll be
 											<br>
-											& services</span>
+											satisfied</span>
 									</div>
 								</div>
 							</div>
@@ -155,11 +153,11 @@
 								<div class="camera_caption fadeIn">
 									<div class="camera_caption_bg">
 										<p>
-											<b>We create modern</b><strong>& effective programs</strong>
+											<b>We provide</b><strong>solutions</strong>
 										</p>
-										<span>for your
+										<span>to engineering
 											<br>
-											administrative staff</span>
+											problems</span>
 									</div>
 								</div>
 							</div>
@@ -167,11 +165,9 @@
 								<div class="camera_caption fadeIn">
 									<div class="camera_caption_bg">
 										<p>
-											<em>We successfully</em>invest our mind & resources
+											<em>Effectively manage</em>project from start
 										</p>
-										<span>to develop
-											<br>
-											high technology</span>
+										<span>to finish </span>
 									</div>
 								</div>
 							</div>
@@ -179,9 +175,9 @@
 								<div class="camera_caption fadeIn">
 									<div class="camera_caption_bg">
 										<p>
-											We`ll show the right direction
+											We Provide
 										</p>
-										<span>to your business success</span>
+										<span>energy solutions</span>
 									</div>
 								</div>
 							</div>
@@ -194,28 +190,29 @@
 					<!--============================== head-buttons =================================-->
 					<ul class="row head_buttons">
 						<li class="span3">
-							<a class="btn" href="#">project
+							<a href="/services/business_plans" class="btn">Sample
+							<br>
+							Business
+							<br>
+							Plans </a>
+						</li>
+						<li class="span3">
+							<a href="/services/project_management" class="btn">project
 							<br>
 							management
 							<br>
 							services</a>
 						</li>
+
 						<li class="span3">
-							<a class="btn"  href="#">manpower
-							<br>
-							development &
-							<br>
-							training</a>
-						</li>
-						<li class="span3">
-							<a class="btn"  href="#">entrepreneurship
+							<a href="/services/entrepreneurship" class="btn">entrepreneurship
 							<br>
 							development
 							<br>
 							programmes</a>
 						</li>
 						<li class="span3">
-							<a class="btn"  href="#">financial
+							<a href="/services/financial_management" class="btn">financial
 							<br>
 							management
 							<br>
@@ -240,11 +237,11 @@
 								how to implement</span>
 						</div>
 						<div class="span7">
-							<span>many different
+							<span>many approaches
 								<br>
-								approaches
+								to business
 								<br>
-								to marketing</span>
+								planning</span>
 						</div>
 					</div>
 				</div>
@@ -257,52 +254,52 @@
 							<div>
 								<figure><img src="../assetspage1_icon1.png" tppabs="http://livedemo00.template-help.com/wt_44757/img/page1_icon1.png" alt="">
 								</figure>
-								<span>employment
+								<span>Project
 									<br>
-									& skills</span>
+									management</span>
 								<p>
-									Praesent vestibulum aenean nonummy hendrerit mauris. Hasellus porta. Fusce suscipit varius mi cum
+									<%= truncate @proj_man, length: 110 %>
 								</p>
-								<a class="btn-link" href="/programme/employment_skills">read more</a>
+								<a class="btn-link" href="/services/project_management">read more</a>
 							</div>
 						</li>
 						<li class="span3 maxheight">
 							<div>
 								<figure><img src="../assets/page1_icon2.png" tppabs="http://livedemo00.template-help.com/wt_44757/img/page1_icon2.png" alt="">
 								</figure>
-								<span>outsourcing
+								<span>Development
 									<br>
-									programs</span>
+									programmes</span>
 								<p>
-									Praesent vestibulum aenean nonummy hendrerit mauris. Hasellus porta. Fusce suscipit varius mi cum
+									<%= truncate @dev_prog, length: 110 %>
 								</p>
-								<a class="btn-link" href="/programme/outsourcing">read more</a>
+								<a class="btn-link" href="/services/entrepreneurship">read more</a>
 							</div>
 						</li>
 						<li class="span3 maxheight">
 							<div>
 								<figure><img src="../assets/page1_icon3.png" tppabs="http://livedemo00.template-help.com/wt_44757/img/page1_icon3.png" alt="">
 								</figure>
-								<span>personal
+								<span> Business
 									<br>
-									coaching</span>
+									Development</span>
 								<p>
-									Praesent vestibulum aenean nonummy hendrerit mauris. Hasellus porta. Fusce suscipit varius mi cum
+									<%= truncate @bus_dev, length: 110 %>
 								</p>
-								<a class="btn-link" href="/programme/personal_coaching">read more</a>
+								<a class="btn-link" href="/services/solar_energy_consulting">read more</a>
 							</div>
 						</li>
 						<li class="span3 maxheight">
 							<div>
 								<figure><img src="../assets/page1_icon4.png" tppabs="http://livedemo00.template-help.com/wt_44757/img/page1_icon4.png" alt="">
 								</figure>
-								<span>finance
+								<span>Business Modeling
 									<br>
-									management</span>
+								</span>
 								<p class="last">
-									Praesent vestibulum aenean nonummy hendrerit mauris. Hasellus porta. Fusce suscipit varius mi cum sociis natoque penatibus et magnis
+									<%= truncate @bus_mod, length: 130 %>
 								</p>
-								<a class="btn-link" href="/programme/finance_management">read more</a>
+								<a class="btn-link" href="/services/business_modeling">read more</a>
 							</div>
 						</li>
 					</ul>
@@ -319,73 +316,28 @@
 									<li>
 										<section>
 											<img class="img-polaroid" alt="" src="../assets/page1_img1.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/page1_img1.jpg">
-											<h3><a href="#">John Silver</a><span>(head manager)</span></h3>
+											<h3><a>Mona</a><span>(FOUNDER/CEO)</span></h3>
 											<p>
-												Praent vestibulum aenean nonummy hendrerit mauris. Hasellus porta. Fusce suscipit varius mi cum sociis.
+												<%= truncate @mona, length: 150 %>
 											</p>
 										</section>
 									</li>
 									<li>
 										<section>
 											<img class="img-polaroid" alt="" src="../assets/page1_img2.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/page1_img2.jpg">
-											<h3><a href="#">April Johnson</a><span>(Marketing Specialist)</span></h3>
+											<h3><a>Anthonia Imanche</a><span>(Researcher)</span></h3>
 											<p>
-												Praent vestibulum aenean nonummy hendrerit mauris. Hasellus porta. Fusce suscipit varius mi cum sociis.
-											</p>
+												<%= truncate @anthonia, length: 120 %></p>
 										</section>
 									</li>
 									<li>
 										<section>
-											<img class="img-polaroid" alt="" src="../assets/page1_img3.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/page1_img3.jpg">
-											<h3><a href="#">Richard Nelson</a><span>(pr manager)</span></h3>
-											<p>
-												Praent vestibulum aenean nonummy hendrerit mauris. Hasellus porta. Fusce suscipit varius mi cum sociis.
-											</p>
+
 										</section>
 									</li>
 									<li>
 										<section>
-											<img class="img-polaroid" alt="" src="../assets/page1_img4.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/page1_img4.jpg">
-											<h3><a href="#">Silvia Smith</a><span>(finance director)</span></h3>
-											<p>
-												Praent vestibulum aenean nonummy hendrerit mauris. Hasellus porta. Fusce suscipit varius mi cum sociis.
-											</p>
-										</section>
-									</li>
-									<li>
-										<section>
-											<img class="img-polaroid" alt="" src="../assets/page1_img1.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/page1_img1.jpg">
-											<h3><a href="#">John Silver</a><span>(head manager)</span></h3>
-											<p>
-												Praent vestibulum aenean nonummy hendrerit mauris. Hasellus porta. Fusce suscipit varius mi cum sociis.
-											</p>
-										</section>
-									</li>
-									<li>
-										<section>
-											<img class="img-polaroid" alt="" src="../assets/page1_img2.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/page1_img2.jpg">
-											<h3><a href="#">April Johnson</a><span>(Marketing Specialist)</span></h3>
-											<p>
-												Praent vestibulum aenean nonummy hendrerit mauris. Hasellus porta. Fusce suscipit varius mi cum sociis.
-											</p>
-										</section>
-									</li>
-									<li>
-										<section>
-											<img class="img-polaroid" alt="" src="../assets/page1_img3.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/page1_img3.jpg">
-											<h3><a href="#">Richard Nelson</a><span>(pr manager)</span></h3>
-											<p>
-												Praent vestibulum aenean nonummy hendrerit mauris. Hasellus porta. Fusce suscipit varius mi cum sociis.
-											</p>
-										</section>
-									</li>
-									<li>
-										<section>
-											<img class="img-polaroid" alt="" src="../assets/page1_img4.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/page1_img4.jpg">
-											<h3><a href="#">Silvia Smith</a><span>(finance director)</span></h3>
-											<p>
-												Praent vestibulum aenean nonummy hendrerit mauris. Hasellus porta. Fusce suscipit varius mi cum sociis.
-											</p>
+
 										</section>
 									</li>
 								</ul>

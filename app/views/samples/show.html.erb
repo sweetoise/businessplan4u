@@ -74,7 +74,7 @@
 									<h4><a><%= @sample_business_plan.title if @sample_business_plan.present? %></a>
 									<br>
 									</h4>
-									<p></p>
+									<p><%= truncate @sample_business_plan.description, length: 200 if @sample_business_plan.present? %></p>
 								</div>
 							</div>
 						</li>
@@ -87,13 +87,13 @@
 						<div class="row">
 							<ul class="list-serv">
 								<% if @sample_business_plan.present? %>
-								<% @sample_business_plan.sections.each do |sect| %>
+								<% @sample_business_plan.sections.order('id ASC').each do |sect| %>
 								<li class="spin" style="padding-left: 13%;">
 									<div class="badge_2 badge"></div>
 									<div class="overflow">
 										<h4><a style="text-transform: uppercase; font-size: 1.1em;"><%= sect.name %></a></h4>
 										<p>
-											<% sect.topics.each do |top| %>
+											<% sect.topics.order('id ASC').each do |top| %>
 											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; font-size: 0.98em; text-transform: capitalize;"><%= top.number %> &nbsp; <%= top.title %></span>
 											<br>
 											<% end %>

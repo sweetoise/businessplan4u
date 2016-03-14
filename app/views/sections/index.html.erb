@@ -30,7 +30,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<% @sections.each do |section| %>
+							<% @sections.order('id ASC').each do |section| %>
 							<tr>
 								<td><%= section.name %></td>
 								<% if section.sample_business_plan %>

@@ -3,7 +3,7 @@
 		<div class="container">
 			<h1 class="brand"><a href="<%= root_path %>" tppabs="http://livedemo00.template-help.com/wt_44757/index.html"><img alt="Stream" src=" ../assets/logo.png" tppabs="http://livedemo00.template-help.com/wt_44757/img/logo.png"></a></h1>
 			<div class="headphone">
-				<span class="admin_login_link"><%= link_to 'Login', new_user_session_path %></span>&nbsp; | &nbsp;Call us:<strong>+234-xxx-xxx-xxxx</strong>
+				<span class="admin_login_link"><%= link_to 'Login', new_user_session_path %></span>&nbsp; | &nbsp;Call us:<strong>+234-806-066-6033</strong>
 			</div>
 		</div>
 	</div>
@@ -60,6 +60,9 @@
 </header>
 
 <!--============================== content =================================-->
+
+<% @business_managements.take(1).each do |biz| %>
+<% if @business_managements.present? %>
 <div id="content">
 	<!--============row-1==========-->
 	<div class="row_5">
@@ -71,11 +74,11 @@
 							<div class="thumbnail services maxheight2">
 								<img src="../assets/acct4.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/page3_img1.jpg" alt="">
 								<div class="caption maxheight">
-									<h4><a>Our Financial Management Scheme.</a>
+									<h4><a><%= biz.title if biz.title.present? %></a>
 									<br>
 									</h4>
 									<p>
-										We provide specialist support for existing and new organizations
+										<%= truncate biz.description, length: 150 if biz.description.present? %>
 									</p>
 								</div>
 							</div>
@@ -84,10 +87,21 @@
 				</div>
 				<div class="span8 solutions">
 					<h2>Business - Financial Management</h2>
+					<h4><%= biz.title if biz.title.present? %>.</h4>
+					<p>
+						<%= biz.description if biz.description.present? %>
+					</p>
 					<p>
 						We support organizations through analysis of existing problems, develop plans for improvement
 						to enable them to maximize their performance and deliver growth through increased revenues and reduced costs.
 						<br>
+					<p>
+						Many organizations uses time to transform their business, balancing the critical area of cash flow-cost, investments and revenue to achieve sustainable business performance.
+						We consider three key areas
+						We leverage on data that's used to report financial results, set future performance expectations, evaluate risk and understand customer interests.
+						We take advantage of technology that can enable the business to run more efficiently. Review the overall people strategy in order to meet future talent and skills requirements.
+						We build disciplines and processes that allow you to be in control of the business. We understand how to harness risk to your advantage.
+					</p>
 					<p>
 						<b>Our provision for specialist support for existing and new organizations include:</b>
 					</p>
@@ -105,8 +119,11 @@
 						<br>
 						&nbsp;&nbsp;--Financial Controls and Systems Development
 					</p>
+
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<% end %>
+<% end %>

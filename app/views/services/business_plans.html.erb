@@ -3,7 +3,7 @@
 		<div class="container">
 			<h1 class="brand"><a href="<%= root_path %>" tppabs="http://livedemo00.template-help.com/wt_44757/index.html"><img alt="Stream" src=" ../assets/logo.png" tppabs="http://livedemo00.template-help.com/wt_44757/img/logo.png"></a></h1>
 			<div class="headphone">
-				<span class="admin_login_link"><%= link_to 'Login', new_user_session_path %></span>&nbsp; | &nbsp;Call us:<strong>+234-xxx-xxx-xxxx</strong>
+				<span class="admin_login_link"><%= link_to 'Login', new_user_session_path %></span>&nbsp; | &nbsp;Call us:<strong>+234-806-066-6033</strong>
 			</div>
 		</div>
 	</div>
@@ -75,7 +75,7 @@
 									<br>
 									</h4>
 									<p>
-										The company has developed over 100 bankable business plans for small, medium and large scales business owners.
+										A business plan is a formal statement of business goals, reasons they are attainable, and plans for reaching them.
 									</p>
 								</div>
 							</div>
@@ -84,17 +84,39 @@
 				</div>
 				<div class="span8 solutions">
 					<h2>Business Plans</h2>
-					<h4>The company has developed over 100 bankable business plans for small, medium and large scales business owners.</h4>
-
+					<h4>A business plan is a formal statement of business goals, reasons they are attainable, and plans for reaching them. It may also contain background
+					information about the organization or team attempting to reach those goals.</h4>
 					<p>
-						<b>HOW TO IDENTIFY THE RIGHT BUSINESS</b>
+						Your business plan is your compass. It will help you map out a new course,
+						and navigate through unchartered territory.
+						<br>
+						Your business plan is a live document. It’s something you'll want to use to pitch for funding,
+						that you should update as you grow and as your business changes, and that you can use to inform and direct your decisions.
+					</p>
+					<p>
+						<b>TYPICAL STRUCTURE FOR A BUSINESS PLAN FOR A START UP VENTURE</b>
 					</p>
 					<hr>
 					<p>
-						Take time to select. Consult with expert and do a market survey of the enterprise
-						Get relevant information before making key decision
-						Get sufficient experience and training on the area of chosen enterprise
-						Consider your area of passion and interest.
+						<ul style="list-style: none;">
+							<li>
+								<p style="font-weight: bold;">
+									Executive summary.
+									Mission statement.
+									Business description.
+									Business environment analysis.
+									SWOT analysis.
+									Industry background.
+									Competitor analysis.
+									Market analysis.
+									Marketing plan.
+									Operations plan.
+									Management summary.
+									Financial plan.
+									Attachments and milestones.
+								</p>
+							</li>
+						</ul>
 					</p>
 
 				</div>
@@ -110,8 +132,10 @@
 								<% @sample_business_plans.each do |samps| %>
 								<% if samps.checked? %>
 								<li class="span4">
-									<div class="services">
-										<h4 style="text-transform: uppercase;"><%= link_to samps.title, :controller => 'samples', :action => 'show', :id => samps.id %></h4>
+									<div class="">
+										<div class="services">
+											<h4 style="text-transform: uppercase; font-size: 0.7em;"><%= link_to samps.title, :controller => 'samples', :action => 'show', :id => samps.id %></h4>
+										</div>
 									</div>
 								</li>
 								<% else %>

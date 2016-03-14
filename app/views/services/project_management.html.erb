@@ -3,7 +3,7 @@
 		<div class="container">
 			<h1 class="brand"><a href="<%= root_path %>" tppabs="http://livedemo00.template-help.com/wt_44757/index.html"><img alt="Stream" src=" ../assets/logo.png" tppabs="http://livedemo00.template-help.com/wt_44757/img/logo.png"></a></h1>
 			<div class="headphone">
-				<span class="admin_login_link"><%= link_to 'Login', new_user_session_path %></span>&nbsp; | &nbsp;Call us:<strong>+234-xxx-xxx-xxxx</strong>
+				<span class="admin_login_link"><%= link_to 'Login', new_user_session_path %></span>&nbsp; | &nbsp;Call us:<strong>+234-806-066-6033</strong>
 			</div>
 		</div>
 	</div>
@@ -60,6 +60,9 @@
 </header>
 
 <!--============================== content =================================-->
+
+<% @engineering_mgmts.take(1).each do |mgmt| %>
+<% if @engineering_mgmts.present? %>
 <div id="content">
 	<!--============row-1==========-->
 	<div class="row_5">
@@ -71,11 +74,11 @@
 							<div class="thumbnail services maxheight2">
 								<img src="../assets/project2.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/page3_img1.jpg" alt="">
 								<div class="caption maxheight">
-									<h4><a>Project Management Consultancy</a>
+									<h4><a><%= mgmt.title %></a>
 									<br>
 									</h4>
 									<p>
-										We provide professional project management services to a number of clients worldwide
+										<%= truncate mgmt.description, length: 150 %>
 									</p>
 								</div>
 							</div>
@@ -85,15 +88,18 @@
 				<div class="span8 solutions">
 					<h2>Engineering & Project Management</h2>
 					<h4></h4>
+					<h4><%= mgmt.title %>.</h4>
 					<p>
-						We provide professional project management services to a number of clients 	worldwide. We deliver value for money by providing the highest standards of 
-						project management, utilizing our experienced project managers to realise 	business benefits and deliver projects to time, cost and quality.
-						Our  expertise  in Project management include project Control, Project 	Scheduling, Project  definition, Project co-ordination and Team Management,
-						negotiation, Time bound project execution, Project Cost  Estimating/Control & 	Monitoring, Project Planning activities, Document  Control, man-hour estimate / 
-						Resource Leveling, budgeting etc.
+						Repeat business with a regular client base is very important to us. By developing long-term relationships with clients, we become more familiar with projects and begin to deliver even more cost-effective services.
+						From scoping study through to commissioning and handover the has the experience and resources to assist with the development and delivery of your project.
+					</p>
+					<p>
+						<%= mgmt.description %>
 					</p>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<% end %>
+<% end %>

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'services/financial_management'
   get 'services/solar_energy_consulting'
   get 'services/business_modeling'
+  get 'services/business_development'
 
 
   get 'about_us/index'

@@ -3,7 +3,7 @@
 		<div class="container">
 			<h1 class="brand"><a href="<%= root_path %>" tppabs="http://livedemo00.template-help.com/wt_44757/index.html"><img alt="Stream" src=" ../assets/logo.png" tppabs="http://livedemo00.template-help.com/wt_44757/img/logo.png"></a></h1>
 			<div class="headphone">
-				<span class="admin_login_link"><%= link_to 'Login', new_user_session_path %></span>&nbsp; | &nbsp;Call us:<strong>+234-xxx-xxx-xxxx</strong>
+				<span class="admin_login_link"><%= link_to 'Login', new_user_session_path %></span>&nbsp; | &nbsp;Call us:<strong>+234-806-066-6033</strong>
 			</div>
 		</div>
 	</div>
@@ -60,6 +60,9 @@
 </header>
 
 <!--============================== content =================================-->
+
+<% @design_engineerings.take(1).each do |design| %>
+<% if @design_engineerings.present? %>
 <div id="content">
 	<!--============row-1==========-->
 	<div class="row_5">
@@ -71,11 +74,11 @@
 							<div class="thumbnail services maxheight2">
 								<img src="../assets/eng1.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/page3_img1.jpg" alt="">
 								<div class="caption maxheight">
-									<h4><a>We Provide Engineering Design Services.</a>
+									<h4><a><%= design.title %></a>
 									<br>
 									</h4>
 									<p>
-										The company do provides design services from conceptual to detailed engineering design including procurement services.
+										<%= truncate design.description, length: 150 %>
 									</p>
 								</div>
 							</div>
@@ -84,11 +87,13 @@
 				</div>
 				<div class="span8 solutions">
 					<h2>Design & Engineering Services</h2>
-					<h4>We Provide Engineering Design Services.</h4>
+					<h4><%= design.title %>.</h4>
+					<p>
+						<%= design.description %>
+					</p>
 					<p>
 						The company do provides design services from conceptual to detailed engineering design including procurement services.
-						We maintains a full-service design staff that covers all of the technical disciplines required to deliver a complete engineering design project,
-					    including civil, structural, architectural, piping, mechanical, and electrical engineers, as well as staff specializing in instrumentation, controls and fire production.
+						We maintains a full-service design staff that covers all of the technical disciplines required to deliver a complete engineering design project, including civil, structural, architectural, piping, mechanical, and electrical engineers, as well 	as staff specializing in instrumentation, controls and fire production.
 						When it comes to the world’s most challenging engineering design and construction projects, Our company is the go-to engineering design place for technically-innovative, award-winning results.
 					</p>
 				</div>
@@ -96,3 +101,5 @@
 		</div>
 	</div>
 </div>
+<% end %>
+<% end %>

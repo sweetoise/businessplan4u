@@ -3,7 +3,7 @@
 		<div class="container">
 			<h1 class="brand"><a href="<%= root_path %>" tppabs="http://livedemo00.template-help.com/wt_44757/index.html"><img alt="Stream" src=" ../assets/logo.png" tppabs="http://livedemo00.template-help.com/wt_44757/img/logo.png"></a></h1>
 			<div class="headphone">
-				<span class="admin_login_link"><%= link_to 'Login', new_user_session_path %></span>&nbsp; | &nbsp;Call us:<strong>+234-xxx-xxx-xxxx</strong>
+				<span class="admin_login_link"><%= link_to 'Login', new_user_session_path %></span>&nbsp; | &nbsp;Call us:<strong>+234-806-066-6033</strong>
 			</div>
 		</div>
 	</div>
@@ -151,42 +151,21 @@
 						<div class="span8">
 							<h2 class="projects">Our last projects</h2>
 							<ul class="thumbnails list-team clearfix">
+								<% @sample_business_plans.order('id ASC').take(3).each do |samples| %>
+								<% if samples.image.present? and samples.description.present? %>
 								<li>
 									<div class="thumbnail thumbnail-1">
-										<figure class="img-polaroid"><img  src="../assets/page2_img1.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/page2_img1.jpg" alt="">
-										</figure>
+										<%= link_to image_tag(samples.image(:thumb), class: 'img-polaroid'), :controller => 'samples', :action => 'show', :id => samples.id %>
 										<section class="maxheight2">
-											<h3><a href="#">seren amet port haalelus</a></h3>
 											<p>
-												Praesent vestibulum aenean nonummy hendrerit mauris. Hasellus.
+												<%= truncate samples.description, length: 100 %>.
 											</p>
 										</section>
 									</div>
 								</li>
-								<li>
-									<div class="thumbnail thumbnail-1">
-										<figure class="img-polaroid"><img  src="../assets/page2_img2.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/page2_img2.jpg" alt="">
-										</figure>
-										<section class="maxheight2">
-											<h3><a href="#">seren amet port haalelus</a></h3>
-											<p>
-												Praesent vestibulum aenean nonummy hendrerit mauris. Hasellus.
-											</p>
-										</section>
-									</div>
-								</li>
-								<li>
-									<div class="thumbnail thumbnail-1">
-										<figure class="img-polaroid"><img  src="../assets/page2_img3.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/page2_img3.jpg" alt="">
-										</figure>
-										<section class="maxheight2">
-											<h3><a href="#">seren amet port haalelus</a></h3>
-											<p>
-												Praesent vestibulum aenean nonummy hendrerit mauris. Hasellus.
-											</p>
-										</section>
-									</div>
-								</li>
+								<% else %>
+								<% end %>
+								<% end %>
 							</ul>
 						</div>
 					</div>

@@ -3,7 +3,7 @@
 		<div class="container">
 			<h1 class="brand"><a href="<%= root_path %>" tppabs="http://livedemo00.template-help.com/wt_44757/index.html"><img alt="Stream" src=" ../assets/logo.png" tppabs="http://livedemo00.template-help.com/wt_44757/img/logo.png"></a></h1>
 			<div class="headphone">
-				<span class="admin_login_link"><%= link_to 'Login', new_user_session_path %></span>&nbsp; | &nbsp;Call us:<strong>+234-xxx-xxx-xxxx</strong>
+				<span class="admin_login_link"><%= link_to 'Login', new_user_session_path %></span>&nbsp; | &nbsp;Call us:<strong>+234-806-066-6033</strong>
 			</div>
 		</div>
 	</div>
@@ -60,6 +60,8 @@
 </header>
 
 <!--============================== content =================================-->
+<% @solar_panels.take(1).each do |solar| %>
+<% if @solar_panels.present? %>
 <div id="content">
 	<!--============row-1==========-->
 	<div class="row_5">
@@ -71,11 +73,11 @@
 							<div class="thumbnail services maxheight2">
 								<img src="../assets/solar_img2.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/page3_img1.jpg" alt="">
 								<div class="caption maxheight">
-									<h4><a>Provision for Solar Energy Consulting.</a>
+									<h4><a><%= solar.title %></a>
 									<br>
 									</h4>
 									<p>
-										Construction and installation, distribution and supply of solar power lamps for rural dwellers.
+										<%= truncate solar.description, length: 150 %>
 									</p>
 								</div>
 							</div>
@@ -85,14 +87,27 @@
 				<div class="span8 solutions">
 					<h2>Solar Energy Consulting</h2>
 					<p>
-						Our main goal is to provide assistance to institutions and companies involved in 
-						energy engineering by filling the wide gap that exists between atmospheric sciences
-						and engineering applications. The company do engage in solar power equipment 
-						assembly including solar panels design, construction and installation, distribution
-						and supply of solar power lamps for rural Dwellers. 
+						<%= solar.description %>
+					</p>
+					<p>
+						<b>INVERTER / UPS BACK UP ENERGY SERVICES</b><br>
+						<p>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Inverter Power For Home and Community<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Inverter Power For Hospitals Equipments<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Inverter Power For ICT Equipment<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Inverter Power For Special Training Center<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Inverter Power For Schools<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Inverter For Airports and Highway<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Inverter Power For Water Dam and Water Borehole<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Inverter Power For Special Projects<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Inverter Power For Street, Road, Garden, Lights<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Inverter Power For General Electrical Appliances<br>
+					    </p>
 					</p>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<% end %>
+<% end %>

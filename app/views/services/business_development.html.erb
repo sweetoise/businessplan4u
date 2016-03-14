@@ -3,7 +3,7 @@
 		<div class="container">
 			<h1 class="brand"><a href="<%= root_path %>" tppabs="http://livedemo00.template-help.com/wt_44757/index.html"><img alt="Stream" src=" ../assets/logo.png" tppabs="http://livedemo00.template-help.com/wt_44757/img/logo.png"></a></h1>
 			<div class="headphone">
-				<span class="admin_login_link"><%= link_to 'Login', new_user_session_path %></span>&nbsp; | &nbsp;Call us:<strong>+234-806-066-6033</strong>
+				<span class="admin_login_link"><%= link_to 'Login', new_user_session_path %></span>&nbsp; | &nbsp;Call us:<strong>+234-xxx-xxx-xxxx</strong>
 			</div>
 		</div>
 	</div>
@@ -69,44 +69,30 @@
 					<ul class="thumbnails2 clearfix row">
 						<li class="span4">
 							<div class="thumbnail services maxheight2">
-								<img src="<%= @sample_business_plan.image if @sample_business_plan.present? %>" tppabs="http://livedemo00.template-help.com/wt_44757/img/page3_img1.jpg" alt="">
+								<img src="../assets/business-development.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/page3_img1.jpg" alt="">
 								<div class="caption maxheight">
-									<h4><a><%= @sample_business_plan.title if @sample_business_plan.present? %></a>
+									<h4><a>How We Develope Businesses</a>
 									<br>
 									</h4>
-									<p><%= truncate @sample_business_plan.description, length: 200 if @sample_business_plan.present? %></p>
+									<p>
+										We augment our customer’s needs and requirements by providing them with amplified support and success.
+									</p>
 								</div>
 							</div>
 						</li>
 					</ul>
 				</div>
 				<div class="span8 solutions">
-					<h2 style="padding-left: 9%;"><%= @sample_business_plan.title if @sample_business_plan.present? %></h2>
-					<hr>
+					<h2>Business Development</h2>
+					<h4></h4>
 					<p>
-						<div class="row">
-							<ul class="list-serv">
-								<% if @sample_business_plan.present? %>
-								<% @sample_business_plan.sections.order('id ASC').each do |sect| %>
-								<li class="spin" style="padding-left: 13%;">
-									<div class="badge_2 badge"></div>
-									<div class="overflow">
-										<h4><a style="text-transform: uppercase; font-size: 1.1em;"><%= sect.name %></a></h4>
-										<p>
-											<% sect.topics.order('id ASC').each do |top| %>
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; font-size: 0.98em; text-transform: capitalize;"><%= top.number %> &nbsp; <%= top.title %></span>
-											<br>
-											<% end %>
-										</p>
-									</div>
-								</li>
-								<% end %>
-								<% end %>
-							</ul>
-						</div>
+						We augment our customer’s needs and requirements by providing them with 
+						amplified support and success. Our staff has developed and implemented 
+						teaming relationships with large and small integrated firms.
 					</p>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 </div>

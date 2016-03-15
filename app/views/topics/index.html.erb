@@ -33,7 +33,7 @@
 						</thead>
 						<tbody>
 							<% @topics.each do |topic| %>
-							<% if topic.sample_business_plan.checked? %>
+							<% if topic.sample_business_plan.checked.present? %>
 							<% else %>
 							<tr>
 								<td><%= number_with_precision(topic.number, precision: 2) %></td>

@@ -68,13 +68,13 @@
 					<h2>contact us</h2>
 					<div class="map">
 						<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
-						<div style='overflow:hidden;height:440px;width:100%;'>
-							<div id='gmap_canvas' style='height:440px;width:100%;'></div>
+						<div style='overflow:hidden;height:440px;width:700px;'>
+							<div id='gmap_canvas' style='height:440px;width:700px;'></div>
 							<div>
-								<small><a href="http://embedgooglemaps.com"> embed google map </a></small>
+								<small><a href="http://embedgooglemaps.com"> embed google maps </a></small>
 							</div>
 							<div>
-								<small><a href="http://freedirectorysubmissionsites.com">directory submission sites</a></small>
+								<small><a href="http://www.autohuren.world/">auto huren</a></small>
 							</div>
 							<style>
 								#gmap_canvas img {
@@ -86,25 +86,23 @@
 						<script type='text/javascript'>
 							function init_map() {
 								var myOptions = {
-									zoom : 15,
-									center : new google.maps.LatLng(6.5992785, 3.3555977999999413),
+									zoom : 17,
+									center : new google.maps.LatLng(6.526482518937542, 3.373227056105872),
 									mapTypeId : google.maps.MapTypeId.ROADMAP
 								};
 								map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
 								marker = new google.maps.Marker({
 									map : map,
-									position : new google.maps.LatLng(6.5992785, 3.3555977999999413)
+									position : new google.maps.LatLng(6.526482518937542, 3.373227056105872)
 								});
 								infowindow = new google.maps.InfoWindow({
-									content : '<strong>Title</strong><br>bamishile street ikeja<br>'
+									content : '<strong>Title</strong><br> Plot 9 Umuago Estate, Opposite Ojo Cantonment, Lagos<br>'
 								});
 								google.maps.event.addListener(marker, 'click', function() {
 									infowindow.open(map, marker);
 								});
 								infowindow.open(map, marker);
 							}
-
-
 							google.maps.event.addDomListener(window, 'load', init_map);
 						</script>
 					</div>

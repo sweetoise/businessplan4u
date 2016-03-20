@@ -57,7 +57,7 @@ class TopicsController < ApplicationController
   end
 
   def import
-    Topic.import(params[:file])
+    Topic.import(params[:file], params[:sample_business_plan_id], params[:section_id])
     redirect_to topics_url, notice: "Topics imported."
     @topics = Topic.all
   end

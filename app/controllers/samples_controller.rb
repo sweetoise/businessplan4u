@@ -9,6 +9,10 @@ class SamplesController < ApplicationController
 
   def set_business_plan
     @sample_business_plan = SampleBusinessPlan.find_by_id(params[:id])
+    
+    @sections = @sample_business_plan.sections.all
+    @topics = @sample_business_plan.topics.all
+    
   end
 
 end

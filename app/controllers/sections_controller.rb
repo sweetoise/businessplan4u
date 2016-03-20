@@ -1,7 +1,7 @@
 class SectionsController < ApplicationController
   before_action :authenticate_user!
   before_action :check_voucher_admin_and_superadmin
-  before_action :set_section, only: [:show, :edit, :update, :destroy]
+  before_action :set_section, only: [:show, :edit, :update, :destroy, :import]
   before_action :list_all_resources
 
   layout 'adminpanel_tables'
@@ -55,7 +55,7 @@ class SectionsController < ApplicationController
   end
 
   def import
-    Section.import(params[:file])
+    Section.import(params[:file], params[:sample_business_plan_id])
     redirect_to sections_url, notice: "Sections imported."
     @sections = Section.all
   end

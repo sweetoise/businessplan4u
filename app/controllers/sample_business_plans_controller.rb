@@ -82,7 +82,7 @@ class SampleBusinessPlansController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def sample_business_plan_params
-    params.require(:sample_business_plan).permit(:checked, :image, :title, :description)
+    params.require(:sample_business_plan).permit(:business_plan_name, :checked, :image, :title, :description)
   end
 
 end

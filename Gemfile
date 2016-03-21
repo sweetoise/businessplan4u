@@ -11,6 +11,9 @@ gem 'simple_form'
 gem 'will_paginate'
 gem 'tire'
 
+gem "dropbox"
+gem "paperclip-dropbox"
+
 gem 'heroku'
 
 gem 'rolify'

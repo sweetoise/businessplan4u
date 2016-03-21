@@ -94,7 +94,7 @@
 										<h4><a style="text-transform: uppercase; font-size: 1.1em;"><%= sect.name %></a></h4>
 										<p>
 											<% sect.topics.order('id ASC').each do |top| %>
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; font-size: 0.98em; text-transform: capitalize;"><%= number_with_precision(top.number, precision: 2) %> &nbsp; <%= top.title %></span>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold; font-size: 0.98em; text-transform: capitalize;"><%= number_with_precision(top.number, precision: 2) if top.number.present? %> &nbsp; <%= top.title %></span>
 											<br>
 											<% end %>
 										</p>

@@ -33,8 +33,6 @@
 						</thead>
 						<tbody>
 							<% @topics.each do |topic| %>
-							<% if topic.sample_business_plan.present? %>
-							<% else %>
 							<tr>
 								<td><%= number_with_precision(topic.number, precision: 2) %></td>
 								<td><%= topic.title %></td>
@@ -52,7 +50,6 @@
 								<td><%= link_to 'Edit', edit_topic_path(topic) %></td>
 								<td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 							</tr>
-							<% end %>
 							<% end %>
 						</tbody>
 						<tfoot>

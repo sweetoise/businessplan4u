@@ -11,8 +11,8 @@ class ServicesController < ApplicationController
     @sample_business_plans = SampleBusinessPlan.where(checked: true)
 
     @limit_23 = @sample_business_plans[0,16]
-    @limit_47 = @sample_business_plans[16,32] 
-    @limit_69 = @sample_business_plans[32,60]
+    @limit_47 = @sample_business_plans[17,32] 
+    @limit_69 = @sample_business_plans[33,46]
   end
 
   def entrepreneurship

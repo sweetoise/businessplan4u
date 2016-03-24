@@ -1,5 +1,4 @@
 require File.expand_path('../boot', __FILE__)
-
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -21,6 +20,9 @@ module Businessplan4u
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+
+    config.assets.initialize_on_precompile = false
+
     config.active_record.raise_in_transactional_callbacks = true
 
     config.generators.assets = false

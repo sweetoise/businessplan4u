@@ -30,5 +30,11 @@ module Businessplan4u
     config.generators.helper = false
 
     config.exceptions_app = self.routes
+
+    Dynopoker.configure do |config|
+      config.address = 'http://wakemydyno.com'
+      config.enable = false # default is true
+      config.poke_frequency = 1800 # default is 1800s (30min)
+    end
   end
 end

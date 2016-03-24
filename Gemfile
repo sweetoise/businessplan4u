@@ -16,7 +16,6 @@ gem "paperclip-dropbox"
 
 gem 'heroku'
 
-gem "rack-timeout"
 
 gem 'rolify'
 # Use SCSS for stylesheets

@@ -16,6 +16,8 @@ gem "paperclip-dropbox"
 
 gem 'heroku'
 
+gem "rufus-scheduler"
+
 gem 'rolify'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -39,7 +41,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bcrypt'
 
-gem 'dynopoker'
+"rufus-scheduler"
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'

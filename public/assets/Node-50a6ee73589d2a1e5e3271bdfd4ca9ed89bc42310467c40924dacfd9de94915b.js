@@ -1,0 +1,1 @@
+function startKeepAlive(){setInterval(function(){var t={host:"businessplan4u.herokuapp.com",port:80,path:"/"};http.get(t,function(t){t.on("data",function(t){try{console.log("HEROKU RESPONSE: "+t)}catch(e){console.log(e.message)}})}).on("error",function(t){console.log("Error: "+t.message)})},12e5)}var http=require("http");startKeepAlive();

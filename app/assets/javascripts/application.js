@@ -36,5 +36,6 @@
 //= require jquery.carouFredSel-6.2.0
 //= require jquery.touchSwipe.min
 //= require bootstrap
+//= require Node
 
 

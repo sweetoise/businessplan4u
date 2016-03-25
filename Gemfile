@@ -16,7 +16,6 @@ gem "paperclip-dropbox"
 
 gem 'heroku'
 
-gem "rufus-scheduler"
 
 gem 'rolify'
 # Use SCSS for stylesheets

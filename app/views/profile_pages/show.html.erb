@@ -21,10 +21,10 @@
 			<!-- Profile Image -->
 			<div class="box box-primary">
 				<div class="box-body box-profile">
-					<% if current_user.photo.blank? %>
+					<% if current_user.avatar.blank? %>
 					<img class="profile-user-img img-responsive img-circle" src="../assets/user-photo/no-photo-big.jpg" alt="User profile picture">
 					<% else %>
-					<%= image_tag current_user.photo.url(:pix), :alt => 'User Profile Picture', class: 'profile-user-img img-responsive img-circle' %>
+					<%= image_tag current_user.avatar.url(:thumb), :alt => 'User Profile Picture', class: 'profile-user-img img-responsive img-circle' %>
 					<% end %>
 					<h3 class="profile-username text-center"><%= @user.username %></h3>
 					<p class="text-muted text-center">
@@ -101,9 +101,9 @@
 																<!-- Horizontal Form -->
 																<!-- form start -->
 																<div class="form-group">
-																	<label for="inputEmail3" class="col-sm-3 control-label">User Photo:</label>
+																	<label for="inputEmail3" class="col-sm-3 control-label">User avatar:</label>
 																	<div class="col-sm-4">
-																		<%= f.file_field :photo, class: 'btn btn-default pull-left' %>
+																		<%= f.file_field :avatar, class: 'btn btn-default pull-left' %>
 																	</div>
 																</div>
 

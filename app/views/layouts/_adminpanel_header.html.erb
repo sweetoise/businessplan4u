@@ -11,18 +11,18 @@
 			<ul class="nav navbar-nav">
 				<!-- User Account: style can be found in dropdown.less -->
 				<li class="dropdown user user-menu">
-					<% if current_user.photo.blank? %>
+					<% if current_user.avatar.blank? %>
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="/assets/user-photo/no-photo-big.jpg" class="user-image" alt="User Image"> <span class="hidden-xs"><%= current_user.username %></span> </a>
 					<% else %>
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <%= image_tag current_user.photo.url(:pix), :alt => 'User Image', class: 'user-image' %> <span class="hidden-xs"><%= current_user.username %></span> </a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <%= image_tag current_user.avatar.url(:thumb), :alt => 'User Image', class: 'user-image' %> <span class="hidden-xs"><%= current_user.username %></span> </a>
 					<% end %>
 					<ul class="dropdown-menu">
 						<!-- User image -->
 						<li class="user-header">
-							<% if current_user.photo.blank? %>
+							<% if current_user.avatar.blank? %>
 							<img src="/assets/user-photo/no-photo-big.jpg" class="img-circle" alt="User Image">
 							<% else %>
-							<%= image_tag current_user.photo.url(:pix), :alt => 'User Image', class: 'img-circle' %>
+							<%= image_tag current_user.avatar.url(:thumb), :alt => 'User Image', class: 'img-circle' %>
 							<% end %>
 							<p>
 								<%= current_user.username %> - <%= current_user.roles.first.name.titleize %>

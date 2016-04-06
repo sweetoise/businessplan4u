@@ -5,10 +5,10 @@
 		<!-- Sidebar user panel -->
 		<div class="user-panel">
 			<div class="pull-left image">
-				<% if current_user.photo.blank? %>
+				<% if current_user.avatar.blank? %>
 				<img src="/assets/user-photo/no-photo-big.jpg" class="img-circle" alt="User Image">
 				<% else %>
-				<%= image_tag current_user.photo.url(:pix), :alt => 'User Image', class: 'img-circle' %>
+				<%= image_tag current_user.avatar.url(:thumb), :alt => 'User Image', class: 'img-circle' %>
 				<% end %>
 			</div>
 			<div class="pull-left info">

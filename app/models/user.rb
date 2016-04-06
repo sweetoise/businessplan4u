@@ -25,9 +25,9 @@ class User < ActiveRecord::Base
                     :styles => { :medium => "300x300>", :thumb => "80x100>", :pix => "180x150>", :admin_size => "128x128>", :small => "30x35>" },
                     :default_url => "",
                     :dropbox_options => {
-                    :path => proc { |style| "#{style}/#{id}_#{image.original_filename}" }
+                    :path => proc { |style| "#{style}/#{id}_#{photo.original_filename}" }
   }
-  validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/, :message => 'Invalid Image Format e.g [ image.jpeg/jpg/png ]'
+  validates_attachment_content_type :photo, :content_type => /\Aphoto\/.*\Z/, :message => 'Invalid Image Format e.g [ image.jpeg/jpg/png ]'
 
   private
   def self.find_first_by_auth_conditions(warden_conditions)

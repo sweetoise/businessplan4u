@@ -1,0 +1,56 @@
+<section class="content-header">
+	<h1> Show Data <small>Show Entrepreneurship Programme</small></h1>
+	<ol class="breadcrumb">
+		<li>
+			<a><i class="fa fa-dashboard"></i> Home</a>
+		</li>
+		<li>
+			<%= link_to 'Entrepreneurship Programmes', entrepreneur_programs_path %>
+		</li>
+		<li class="active">
+			<%= link_to 'Show Entrepreneurship Programme', @entrepreneur_program %>
+		</li>
+	</ol>
+</section>
+
+<section class="content">
+	<div class="row">
+		<div class="example-modal">
+			<div class="modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Viewing Entrepreneurship Programme</h4>
+						</div>
+						<div class="box-body">
+							<div class="show-content-div-top-padding">
+								<div class="form-group">
+									<p class="show-details">
+										<label for="inputEmail" class="control-label col-sm-4"> <b style="color: #3e3e3e; text-transform: capitalize;">Title:</b> </label>
+										<%= @entrepreneur_program.topic %>
+									</p>
+								</div>
+								<div class="form-group">
+									<p class="show-details" style="text-transform: none;">
+										<label for="inputEmail" class="control-label col-sm-4"> <b style="color: #3e3e3e; text-transform: capitalize;">Description:</b> </label>
+										<%= truncate @entrepreneur_program.description, length: 50 %>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div><!-- /.box-body -->
+				</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div><!-- /.example-modal -->
+	</div>
+</section>
+
+<section class="content">
+	<!-- Default box -->
+	<div class="box">
+		<div class="box-footer">
+			<%= link_to 'Edit', edit_entrepreneur_program_path(@entrepreneur_program), class: 'btn btn-default btn-flat' %> &nbsp;&nbsp;&nbsp;&nbsp;
+			| &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Back', entrepreneur_programs_path, class: 'btn btn-default btn-flat' %>
+		</div><!-- /.box-footer-->
+	</div><!-- /.box -->
+</section><!-- /.content -->

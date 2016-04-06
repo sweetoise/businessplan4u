@@ -1,0 +1,22 @@
+<script>
+  $(document).ready(function() {
+    $('#sample_business_plans_select').change(function() {
+      $.ajax({
+        url: "<%= update_sections_path%>",
+        data: {
+          sample_business_plan_id : $('#sample_business_plans_select').val()
+        },
+        dataType: "script"
+      });
+    });
+    $('#sections_select').change(function() {
+      $.ajax({
+        url: "<%= update_topics_path %>",
+        data: {
+          section_id : $('#sections_select').val()
+        },
+        dataType: "script"
+      });
+    });
+  });
+</script>

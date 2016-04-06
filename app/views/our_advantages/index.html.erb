@@ -1,0 +1,74 @@
+<section class="content-header">
+	<h1> Our Advantages <small>Our Advantages table</small></h1>
+	<ol class="breadcrumb">
+		<li>
+			<a><i class="fa fa-dashboard"></i> Home</a>
+		</li>
+		<li class="active">
+			<a>Our Advantages</a>
+		</li>
+	</ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="box">
+				<div class="box-header">
+					<h3 class="box-title">Our Advantages Data With Full Features</h3>
+				</div><!-- /.box-header -->
+				<div class="box-body">
+					<table id="example1" class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>Advantage</th>
+								<th>Description</th>
+								<th>Show content</th>
+								<th>Edit content</th>
+								<th>Delete content</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% @our_advantages.each do |our_advantage| %>
+							<tr>
+								<td><%= our_advantage.title %></td>
+								<td><%= truncate our_advantage.description, length: 50 %></td>
+								<td><%= link_to 'Show', our_advantage %></td>
+								<td><%= link_to 'Edit', edit_our_advantage_path(our_advantage) %></td>
+								<td><%= link_to 'Destroy', our_advantage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+							</tr>
+							<% end %>
+						</tbody>
+						<tfoot>
+							<tr>
+								<th>Advantage</th>
+								<th>Description</th>
+								<th>Show content</th>
+								<th>Edit content</th>
+								<th>Delete content</th>
+							</tr>
+						</tfoot>
+					</table>
+				</div><!-- /.box-body -->
+			</div><!-- /.box -->
+		</div><!-- /.col -->
+	</div><!-- /.row -->
+
+	<!-- Default box -->
+	<div class="box">
+		<div class="box-footer">
+			<!-- Block buttons -->
+			<div class="box-header">
+				<h3 class="box-title">New Our Advantage</h3>
+			</div>
+			<div class="box-body">
+				<div class="add-inst">
+					<%= link_to '+  ADD NEW ADVANTAGE', new_our_advantage_path, :class => 'btn btn-primary btn-block' %>
+				</div>
+			</div>
+		</div><!-- /.box-footer-->
+	</div><!-- /.box -->
+</section>
+

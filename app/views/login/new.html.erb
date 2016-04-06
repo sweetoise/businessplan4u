@@ -1,0 +1,33 @@
+<% content_for(:title, 'Login Page')%>
+<div class="login-box">
+	<div class="login-logo">
+		<a href="<%= root_path %>"><b>BizPlan</b>4U</a>
+	</div><!-- /.login-logo -->
+	<div class="login-box-body">
+		<p class="login-box-msg">
+			SIGN IN TO START YOUR SESSION
+		</p>
+		<%= simple_form_for(:user, html: { autocomplete: 'off' }, :url => session_path(:user)) do |f| %>
+
+		<% flash.each do |name, msg| %>
+		<div class="login_error">
+			<%= content_tag :div, msg, :id => "flash" if msg.length > 24 %>
+		</div>
+		<% end %>
+
+		<div class="form-group has-feedback">
+			<%= f.input :login, required: false, label: false, autofocus: false, :placeholder => 'Username or Email',  input_html: { id: 'inputEmail', class: 'form-control' } %>
+			<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+		</div>
+		<div class="form-group has-feedback">
+			<%= f.input :password, required: false, label: false, :placeholder => 'Password', input_html: { id: 'inputPassword', class: 'form-control'} %>
+			<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<%= f.submit 'Sign In', :class => 'btn btn-primary btn-block btn-flat' %>
+			</div><!-- /.col -->
+		</div>
+		<% end %>
+	</div><!-- /.login-box-body -->
+</div><!-- /.login-box -->

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%= csrf_meta_tags %>
+		<title>MeConsulting :: Home</title>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../assets/LOGO.ico" tppabs="http://livedemo00.template-help.com/wt_44757/img/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="../assets/LOGO.ico" tppabs="http://livedemo00.template-help.com/wt_44757/img/favicon.ico" type="image/x-icon" />
+		<meta name="description" content="Your description">
+		<meta name="keywords" content="Your keywords">
+		<meta name="author" content="Your name">
+		<link href='<%= asset_path('bootstrap.scss') %>' rel="stylesheet" tppabs="http://livedemo00.template-help.com/wt_44757/css/bootstrap.css">
+		<link href='<%= asset_path('responsive.scss') %>' rel="stylesheet" tppabs="http://livedemo00.template-help.com/wt_44757/css/responsive.css">
+		<link href='<%= asset_path('style.scss') %>' rel="stylesheet" tppabs="http://livedemo00.template-help.com/wt_44757/css/style.css">
+		<link href='<%= asset_path('camera.scss') %>' rel="stylesheet" tppabs="http://livedemo00.template-help.com/wt_44757/css/camera.css">
+
+		<script src='<%= asset_path('jquery.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/jquery.js"></script>
+		<script src='<%= asset_path('jquery-migrate-1.1.1.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/jquery-migrate-1.1.1.js"></script>
+		<script src='<%= asset_path('jquery.easing.1.3.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/jquery.easing.1.3.js"></script>
+		<script src='<%= asset_path('superfish.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/superfish.js"></script>
+		<script src='<%= asset_path('jquery.mobilemenu.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/jquery.mobilemenu.js"></script>
+		<script src='<%= asset_path('jquery.cookie.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/jquery.cookie.js"></script>
+		<script src='<%= asset_path('jquery.equalheights.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/jquery.equalheights.js"></script>
+
+		<!--[if (gt IE 9)|!(IE)]><!-->
+		<script src='<%= asset_path('jquery.mobile.customized.min.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/jquery.mobile.customized.min.js"></script>
+		<!--<![endif]-->
+		<script src='<%= asset_path('camera.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/camera.js"></script>
+
+		<script src='<%= asset_path('jquery.carouFredSel-6.2.0.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/jquery.carouFredSel-6.2.0.js"></script>
+		<script src='<%= asset_path('jquery.touchSwipe.min.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/jquery.touchSwipe.min.js"></script>
+
+		<script>
+			$(window).load(function() {
+				jQuery('.camera_wrap').camera();
+
+				//	Responsive layout, resizing the items
+				$('#carousel1').carouFredSel({
+					auto : false,
+					width : '100%',
+					scroll : 1,
+					prev : '#prev',
+					next : '#next',
+					pagination : false,
+					mousewheel : false,
+					swipe : {
+						onMouse : true,
+						onTouch : true
+					},
+					items : {
+						width : '194px',
+						height : 'auto', //	optionally resize item-height
+						visible : {
+							min : 1,
+							max : 4
+						}
+					}
+				});
+			});
+		</script>
+		<!--[if lt IE 8]>
+		<div style='text-align:center'><a href="javascript:if(confirm(%27http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode%27" tppabs="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="../../www.bing.com/search-q=theie6countdown&form=MSSRPD" tppabs="http://www.theie6countdown.com/img/upgrade.jpg"border="0"alt=""/></a></div>
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<link rel="stylesheet" href="../../static.livedemo00.template-help.com/wt_44757/css/docs.css" tppabs="http://livedemo00.template-help.com/wt_44757/css/docs.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="../../static.livedemo00.template-help.com/wt_44757/css/ie.css" tppabs="http://livedemo00.template-help.com/wt_44757/css/ie.css" type="text/css" media="screen">
+		<script src="../../static.livedemo00.template-help.com/wt_44757/assets/js/html5shiv.js" tppabs="http://livedemo00.template-help.com/wt_44757/assets/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<!--==============================header=================================-->
+		<header>
+			<div class="headtop">
+				<div class="container">
+					<h1 class="brand"><a href="<%= root_path %>" tppabs="http://livedemo00.template-help.com/wt_44757/index.html"><img alt="Stream" src=" ../assets/business.png" tppabs="http://livedemo00.template-help.com/wt_44757/img/logo.png"></a></h1>
+					<div class="headphone">
+						<span class="admin_login_link"><%= link_to 'Login', new_user_session_path %></span>&nbsp; | &nbsp;Call us:<strong>+234-806-066-6033</strong>
+					</div>
+				</div>
+			</div>
+			<div class="headmain">
+				<div class="container">
+					<div class="clearfix">
+						<div class="navbar navbar_ clearfix extra">
+							<div class="nav-collapse nav-collapse_  collapse">
+								<ul class="nav sf-menu">
+									<li class="active">
+										<a href="<%= root_path %>" tppabs="http://livedemo00.template-help.com/wt_44757/index.html">Home<span></span></a>
+									</li>
+									<li>
+										<a href="/about_us/index" tppabs="http://livedemo00.template-help.com/wt_44757/index-1.html">about us<span></span></a>
+									</li>
+									<li>
+										<a href="/services/index" tppabs="http://livedemo00.template-help.com/wt_44757/index-2.html">services<span></span></a>
+										<ul>
+											<li>
+												<a href="/services/overview">Overview</a>
+											</li>
+											<li>
+												<a href="/services/business_plans">Business Plans</a>
+											</li>
+											<li>
+
+											<li>
+												<a href="/services/entrepreneurship">Entrepreneurship</a>
+											</li>
+											<li>
+												<a href="/services/project_management">Project management</a>
+											</li>
+											<li>
+												<a href="/services/engineering_designs">Engineering designs</a>
+											</li>
+											<li>
+												<a href="/services/financial_management">Financial management</a>
+											</li>
+											<li>
+												<a href="/services/solar_energy_consulting">Solar energy services</a>
+											</li>
+
+										</ul>
+									</li>
+									<li>
+										<a href="/offered_solutions/index" tppabs="http://livedemo00.template-help.com/wt_44757/index-3.html">solutions<span></span></a>
+									</li>
+									<li>
+										<a href="/contact_us/index" tppabs="http://livedemo00.template-help.com/wt_44757/index-4.html">contacts<span></span></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--============================== slider =================================-->
+					<div class="slider">
+						<div class="camera_wrap">
+							<div data-src="../assets/picture1.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/picture1.jpg">
+								<div class="camera_caption fadeIn">
+									<div class="camera_caption_bg">
+										<p>
+											We develop
+											<br>
+											bankable
+											<br>
+											<strong>business plans</strong>
+										</p>
+										<span>You'll be
+											<br>
+											satisfied</span>
+									</div>
+								</div>
+							</div>
+							<div data-src="../assets/picture2.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/picture2.jpg">
+								<div class="camera_caption fadeIn">
+									<div class="camera_caption_bg">
+										<p>
+											<b>We provide</b><strong>solutions</strong>
+										</p>
+										<span>to engineering
+											<br>
+											problems</span>
+									</div>
+								</div>
+							</div>
+							<div data-src="../assets/picture3.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/picture3.jpg">
+								<div class="camera_caption fadeIn">
+									<div class="camera_caption_bg">
+										<p>
+											<em>Effectively manage</em>project from start
+										</p>
+										<span>to finish </span>
+									</div>
+								</div>
+							</div>
+							<div data-src="../assets/picture4.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/picture4.jpg">
+								<div class="camera_caption fadeIn">
+									<div class="camera_caption_bg">
+										<p>
+											We Provide
+										</p>
+										<span>energy solutions</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row_1">
+				<div class="container">
+					<!--============================== head-buttons =================================-->
+					<ul class="row head_buttons">
+						<li class="span3">
+							<a href="/services/business_plans" class="btn">Sample
+							<br>
+							Business
+							<br>
+							Plans </a>
+						</li>
+						<li class="span3">
+							<a href="/services/project_management" class="btn">project
+							<br>
+							management
+							<br>
+							services</a>
+						</li>
+
+						<li class="span3">
+							<a href="/services/entrepreneurship" class="btn">entrepreneurship
+							<br>
+							development
+							<br>
+							programmes</a>
+						</li>
+						<li class="span3">
+							<a href="/services/financial_management" class="btn">financial
+							<br>
+							management
+							<br>
+							services</a>
+						</li>
+					</ul>
+					<div class="fman1">
+						<img class="man1" src="../assets/man1.png" tppabs="http://livedemo00.template-help.com/wt_44757/img/man1.png" alt="">
+					</div>
+				</div>
+			</div>
+		</header>
+		<!--============================== content =================================-->
+		<div id="content">
+			<!--============================== row1 =================================-->
+			<div class="row_2">
+				<div class="container">
+					<div class="row box1">
+						<div class="span5">
+							<span>we deliver best
+								<br>
+								practice</span>
+						</div>
+						<div class="span7">
+							<span>and quality
+								<br>
+								to our clients </span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--============================== row2 =================================-->
+			<div class="row_3">
+				<div class="container">
+					<ul class="row box2">
+						<li class="span3 maxheight">
+							<div>
+								<figure><img src="../assetspage1_icon1.png" tppabs="http://livedemo00.template-help.com/wt_44757/img/page1_icon1.png" alt="">
+								</figure>
+								<span>Project
+									<br>
+									management</span>
+								<p>
+									<%= truncate @proj_man, length: 110 %>
+								</p>
+								<a class="btn-link" href="/services/project_management">read more</a>
+							</div>
+						</li>
+						<li class="span3 maxheight">
+							<div>
+								<figure><img src="../assets/page1_icon2.png" tppabs="http://livedemo00.template-help.com/wt_44757/img/page1_icon2.png" alt="">
+								</figure>
+								<span>Development
+									<br>
+									programmes</span>
+								<p>
+									<%= truncate @dev_prog, length: 110 %>
+								</p>
+								<a class="btn-link" href="/services/entrepreneurship">read more</a>
+							</div>
+						</li>
+						<li class="span3 maxheight">
+							<div>
+								<figure><img src="../assets/page1_icon3.png" tppabs="http://livedemo00.template-help.com/wt_44757/img/page1_icon3.png" alt="">
+								</figure>
+								<span> Business
+									<br>
+									Development</span>
+								<p>
+									<%= truncate @bus_dev, length: 110 %>
+								</p>
+								<a class="btn-link" href="/services/business_development">read more</a>
+							</div>
+						</li>
+						<li class="span3 maxheight">
+							<div>
+								<figure><img src="../assets/page1_icon4.png" tppabs="http://livedemo00.template-help.com/wt_44757/img/page1_icon4.png" alt="">
+								</figure>
+								<span>Business Modeling
+									<br>
+								</span>
+								<p class="last">
+									<%= truncate @bus_mod, length: 130 %>
+								</p>
+								<a class="btn-link" href="/services/business_modeling">read more</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--============================== row3 =================================-->
+			<div class="row_4">
+				<div class="container">
+					<div class="row">
+						<div class="span8">
+							<h2>Our team:</h2>
+							<div class="list_carousel responsive">
+								<ul id="carousel1">
+									<li>
+										<section>
+											<h3><a>Mona</a><span>(FOUNDER/CEO)</span></h3>
+											<p>
+												<%= truncate @mona, length: 150 %>
+											</p>
+										</section>
+									</li>
+									<li>
+										<section>
+											<h3><a>Anthonia Imanche</a><span>(Researcher)</span></h3>
+											<p>
+												<%= truncate @anthonia, length: 120 %>
+											</p>
+										</section>
+									</li>
+									<li>
+										<section>
+
+										</section>
+									</li>
+									<li>
+										<section>
+
+										</section>
+									</li>
+								</ul>
+								<div class="clear"></div>
+								<a id="prev"  href="javascript:;"></a>
+								<a id="next"  href="javascript:;"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<%= render 'layouts/site_footer' %>
+
+		<script src='<%= asset_path('bootstrap.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/bootstrap.js"></script>
+
+		<!--LIVEDEMO_00 -->
+
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-7078796-5']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www/') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+
+	</body>
+</html>

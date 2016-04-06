@@ -1,0 +1,60 @@
+<section class="content-header">
+	<h1> Show Data <small>Show Outline</small></h1>
+	<ol class="breadcrumb">
+		<li>
+			<a><i class="fa fa-dashboard"></i> Home</a>
+		</li>
+		<li>
+			<%= link_to 'Outlines', outlines_path %>
+		</li>
+		<li class="active">
+			<%= link_to 'Show Outline', @outline %>
+		</li>
+	</ol>
+</section>
+
+<section class="content">
+	<div class="row">
+		<div class="example-modal">
+			<div class="modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Viewing Outline</h4>
+						</div>
+						<div class="box-body">
+							<div class="show-content-div-top-padding">
+								<div class="form-group">
+									<p class="show-details">
+										<label for="inputEmail" class="control-label col-sm-5"> <b style="color: #3e3e3e; text-transform: capitalize;">Entrepreneurship Prog.</b> </label>
+										<% if @outline.entrepreneur_program %>
+										<%= @outline.entrepreneur_program.topic %>
+										<% else %>
+										<span class="red-links-profiles">Not Available</span>
+										<% end %>
+									</p>
+								</div>
+								<div class="form-group">
+									<p class="show-details">
+										<label for="inputEmail" class="control-label col-sm-5"> <b style="color: #3e3e3e; text-transform: capitalize;">Question</b> </label>
+										<span style="text-transform: capitalize;"><%= @outline.question %></span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div><!-- /.box-body -->
+				</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div><!-- /.example-modal -->
+	</div>
+</section>
+
+<section class="content">
+	<!-- Default box -->
+	<div class="box">
+		<div class="box-footer">
+			<%= link_to 'Edit', edit_outline_path(@outline), class: 'btn btn-default btn-flat' %> &nbsp;&nbsp;&nbsp;&nbsp;
+			| &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Back', outlines_path, class: 'btn btn-default btn-flat' %>
+		</div><!-- /.box-footer-->
+	</div><!-- /.box -->
+</section><!-- /.content -->

@@ -1,0 +1,130 @@
+<% content_for(:title, 'Financial Management')%>
+<header>
+	<div class="headtop">
+		<div class="container">
+			<h1 class="brand"><a href="<%= root_path %>" tppabs="http://livedemo00.template-help.com/wt_44757/index.html"><img alt="Stream" src=" ../assets/business.png" tppabs="http://livedemo00.template-help.com/wt_44757/img/logo.png"></a></h1>
+			<div class="headphone">
+				<span class="admin_login_link"><%= link_to 'Login', new_user_session_path %></span>&nbsp; | &nbsp;Call us:<strong>+234-806-066-6033</strong>
+			</div>
+		</div>
+	</div>
+	<div class="headmain">
+		<div class="container">
+			<div class="clearfix">
+				<div class="navbar navbar_ clearfix extra">
+					<div class="nav-collapse nav-collapse_  collapse">
+						<ul class="nav sf-menu">
+							<li>
+								<a href="<%= root_path %>" tppabs="http://livedemo00.template-help.com/wt_44757/index.html">Home<span></span></a>
+							</li>
+							<li>
+								<a href="/about_us/index" tppabs="http://livedemo00.template-help.com/wt_44757/index-1.html">about us<span></span></a>
+							</li>
+							<li class="active">
+								<a href="/services/index" tppabs="http://livedemo00.template-help.com/wt_44757/index-2.html">services<span></span></a>
+								<ul>
+									<li>
+										<a href="/services/overview">Overview</a>
+									</li>
+									<li>
+										<a href="/services/business_plans">Business Plans</a>
+									</li>
+									<li>
+										<a href="/services/entrepreneurship">Entrepreneurship</a>
+									</li>
+									<li>
+										<a href="/services/project_management">Project management</a>
+									</li>
+									<li>
+										<a href="/services/engineering_designs">Engineering designs</a>
+									</li>
+									<li>
+										<a href="/services/financial_management">Financial management</a>
+									</li>
+									<li>
+										<a href="/services/solar_energy_consulting">Solar energy services</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="/offered_solutions/index" tppabs="http://livedemo00.template-help.com/wt_44757/index-3.html">solutions<span></span></a>
+							</li>
+							<li>
+								<a href="/contact_us/index" tppabs="http://livedemo00.template-help.com/wt_44757/index-4.html">contacts<span></span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!--============================== content =================================-->
+
+<% @business_managements.take(1).each do |biz| %>
+<% if @business_managements.present? %>
+<div id="content">
+	<!--============row-1==========-->
+	<div class="row_5">
+		<div class="container">
+			<div class="row">
+				<div class="span4">
+					<ul class="thumbnails2 clearfix row">
+						<li class="span4">
+							<div class="thumbnail services maxheight2">
+								<img src="../assets/acct4.jpg" tppabs="http://livedemo00.template-help.com/wt_44757/img/page3_img1.jpg" alt="">
+								<div class="caption maxheight">
+									<h4><a><%= biz.title if biz.title.present? %></a>
+									<br>
+									</h4>
+									<p>
+										<%= truncate biz.description, length: 150 if biz.description.present? %>
+									</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="span8 solutions">
+					<h2>Business - Financial Management</h2>
+					<h4><%= biz.title if biz.title.present? %>.</h4>
+					<p>
+						<%= biz.description if biz.description.present? %>
+					</p>
+					<p>
+						We support organizations through analysis of existing problems, develop plans for improvement
+						to enable them to maximize their performance and deliver growth through increased revenues and reduced costs.
+						<br>
+					<p>
+						Many organizations uses time to transform their business, balancing the critical area of cash flow-cost, investments and revenue to achieve sustainable business performance.
+						We consider three key areas
+						We leverage on data that's used to report financial results, set future performance expectations, evaluate risk and understand customer interests.
+						We take advantage of technology that can enable the business to run more efficiently. Review the overall people strategy in order to meet future talent and skills requirements.
+						We build disciplines and processes that allow you to be in control of the business. We understand how to harness risk to your advantage.
+					</p>
+					<p>
+						<b>Our provision for specialist support for existing and new organizations include:</b>
+					</p>
+					</p>
+					<p>
+						&nbsp;&nbsp;--Financial Forecasting and Planning
+						<br>
+						&nbsp;&nbsp;--Business Planning
+						<br>
+						&nbsp;&nbsp;--Business Modeling
+						<br>
+						&nbsp;&nbsp;--Financial Due Diligence
+						<br>
+						&nbsp;&nbsp;--Development Of Business Cases
+						<br>
+						&nbsp;&nbsp;--Financial Controls and Systems Development
+					</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<% end %>
+<% end %>

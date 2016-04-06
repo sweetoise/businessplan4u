@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%= csrf_meta_tags %>
+		<title><%= full_title(yield :title)%></title>
+		<meta charset="UTF-8">
+		<link rel="icon" href="../assets/LOGO.ico" tppabs="http://livedemo00.template-help.com/wt_44757/img/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="../assets/LOGO.ico" tppabs="http://livedemo00.template-help.com/wt_44757/img/favicon.ico" type="image/x-icon" />
+		<meta name="description" content="Your description">
+		<meta name="keywords" content="Your keywords">
+		<meta name="author" content="Your name">
+		<link href='<%= asset_path('bootstrap.scss') %>' rel="stylesheet" tppabs="http://livedemo00.template-help.com/wt_44757/css/bootstrap.css">
+		<link href='<%= asset_path('responsive.scss') %>' rel="stylesheet" tppabs="http://livedemo00.template-help.com/wt_44757/css/responsive.css">
+		<link href='<%= asset_path('style.scss') %>' rel="stylesheet" tppabs="http://livedemo00.template-help.com/wt_44757/css/style.css">
+		<link href='<%= asset_path('camera.scss') %>' rel="stylesheet" tppabs="http://livedemo00.template-help.com/wt_44757/css/camera.css">
+
+		<script src='<%= asset_path('jquery.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/jquery.js"></script>
+		<script src='<%= asset_path('jquery-migrate-1.1.1.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/jquery-migrate-1.1.1.js"></script>
+		<script src='<%= asset_path('jquery.easing.1.3.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/jquery.easing.1.3.js"></script>
+		<script src='<%= asset_path('superfish.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/superfish.js"></script>
+		<script src='<%= asset_path('jquery.mobilemenu.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/jquery.mobilemenu.js"></script>
+		<script src='<%= asset_path('jquery.cookie.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/jquery.cookie.js"></script>
+		<script src='<%= asset_path('jquery.equalheights.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/jquery.equalheights.js"></script>
+
+		<!--[if (gt IE 9)|!(IE)]><!-->
+		<script src='<%= asset_path('jquery.mobile.customized.min.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/jquery.mobile.customized.min.js"></script>
+		<!--<![endif]-->
+		<script src='<%= asset_path('camera.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/camera.js"></script>
+
+		<script src='<%= asset_path('jquery.carouFredSel-6.2.0.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/jquery.carouFredSel-6.2.0.js"></script>
+		<script src='<%= asset_path('jquery.touchSwipe.min.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/jquery.touchSwipe.min.js"></script>
+
+		<script>
+			$(window).load(function() {
+				jQuery('.camera_wrap').camera();
+
+				//	Responsive layout, resizing the items
+				$('#carousel1').carouFredSel({
+					auto : false,
+					width : '100%',
+					scroll : 1,
+					prev : '#prev',
+					next : '#next',
+					pagination : false,
+					mousewheel : false,
+					swipe : {
+						onMouse : true,
+						onTouch : true
+					},
+					items : {
+						width : '194px',
+						height : 'auto', //	optionally resize item-height
+						visible : {
+							min : 1,
+							max : 4
+						}
+					}
+				});
+			});
+		</script>
+		<!--[if lt IE 8]>
+		<div style='text-align:center'><a href="javascript:if(confirm(%27http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode%27" tppabs="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="../../www.bing.com/search-q=theie6countdown&form=MSSRPD" tppabs="http://www.theie6countdown.com/img/upgrade.jpg"border="0"alt=""/></a></div>
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<link rel="stylesheet" href="../../static.livedemo00.template-help.com/wt_44757/css/docs.css" tppabs="http://livedemo00.template-help.com/wt_44757/css/docs.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="../../static.livedemo00.template-help.com/wt_44757/css/ie.css" tppabs="http://livedemo00.template-help.com/wt_44757/css/ie.css" type="text/css" media="screen">
+		<script src="../../static.livedemo00.template-help.com/wt_44757/assets/js/html5shiv.js" tppabs="http://livedemo00.template-help.com/wt_44757/assets/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<!--============================== content =================================-->
+		<%= yield %>
+		<!--============================== footer =================================-->
+		<%= render 'layouts/site_footer' %>
+		
+		<script src='<%= asset_path('bootstrap.js') %>' tppabs="http://livedemo00.template-help.com/wt_44757/js/bootstrap.js"></script>
+
+		<!--LIVEDEMO_00 -->
+
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-7078796-5']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www/') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+
+	</body>
+</html>

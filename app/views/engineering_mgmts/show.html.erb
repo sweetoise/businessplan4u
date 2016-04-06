@@ -1,0 +1,62 @@
+<section class="content-header">
+	<h1> Show Data <small>Show Engineering & Project Mgmt</small></h1>
+	<ol class="breadcrumb">
+		<li>
+			<a><i class="fa fa-dashboard"></i> Home</a>
+		</li>
+		<li>
+			<%= link_to 'Engineering & Project Mgmts', engineering_mgmts_path %>
+		</li>
+		<li class="active">
+			<%= link_to 'Show Engineering & Project Mgmt', @engineering_mgmt %>
+		</li>
+	</ol>
+</section>
+
+<section class="content">
+	<div class="row">
+		<div class="example-modal">
+			<div class="modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Viewing Engineering & Project Mgmt</h4>
+						</div>
+						<div class="box-body">
+							<div class="show-content-div-top-padding">
+								<div class="form-group">
+									<p class="show-details">
+										<label for="inputEmail" class="control-label col-sm-4"> <b style="color: #3e3e3e; text-transform: capitalize;">Cover Image:</b> </label>
+										<%= image_tag @engineering_mgmt.image(:thumb) %>
+									</p>
+								</div>
+								<div class="form-group">
+									<p class="show-details">
+										<label for="inputEmail" class="control-label col-sm-4"> <b style="color: #3e3e3e; text-transform: capitalize;">Title:</b> </label>
+										<%= @engineering_mgmt.title %>
+									</p>
+								</div>
+								<div class="form-group">
+									<p class="show-details" style="text-transform: none;">
+										<label for="inputEmail" class="control-label col-sm-4"> <b style="color: #3e3e3e; text-transform: capitalize;">Description:</b> </label>
+										<%= truncate @engineering_mgmt.description, length: 50 %>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div><!-- /.box-body -->
+				</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div><!-- /.example-modal -->
+	</div>
+</section>
+
+<section class="content">
+	<!-- Default box -->
+	<div class="box">
+		<div class="box-footer">
+			<%= link_to 'Edit', edit_engineering_mgmt_path(@engineering_mgmt), class: 'btn btn-default btn-flat' %> &nbsp;&nbsp;&nbsp;&nbsp;
+			| &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Back', engineering_mgmts_path, class: 'btn btn-default btn-flat' %>
+		</div><!-- /.box-footer-->
+	</div><!-- /.box -->
+</section><!-- /.content -->

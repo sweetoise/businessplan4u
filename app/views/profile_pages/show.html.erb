@@ -1,0 +1,153 @@
+<div class="profile-head-padding">
+	<section class="content-header">
+		<h1 style="font-weight: bold;"> Admin Profile </h1>
+		<ol class="breadcrumb">
+			<li>
+				<a href="<%= root_path %>"><i class="fa fa-dashboard"></i> Home</a>
+			</li>
+
+			<li class="active">
+				Admin Account profile
+			</li>
+		</ol>
+	</section>
+</div>
+
+<!-- Main content -->
+<section class="content">
+	<div class="row">
+		<div class="col-md-3">
+
+			<!-- Profile Image -->
+			<div class="box box-primary">
+				<div class="box-body box-profile">
+					<% if current_user.photo.blank? %>
+					<img class="profile-user-img img-responsive img-circle" src="../assets/user-photo/no-photo-big.jpg" alt="User profile picture">
+					<% else %>
+					<%= image_tag current_user.photo.url(:pix), :alt => 'User Profile Picture', class: 'profile-user-img img-responsive img-circle' %>
+					<% end %>
+					<h3 class="profile-username text-center"><%= @user.username %></h3>
+					<p class="text-muted text-center">
+						<%= @user.roles.first.name.titleize %>
+					</p>
+					<b class="bold-delete-link"><%= link_to 'Delete User',@user, :class => 'btn btn-primary btn-block', method: :delete, data: { confirm: 'Are you sure?' } unless @user == current_user %></b>
+				</div><!-- /.box-body -->
+			</div><!-- /.box -->
+
+			<!-- About Me Box -->
+			<div class="box box-primary">
+				<div class="box-header">
+					<h3 class="box-title">User Details</h3>
+				</div><!-- /.box-header -->
+				<div class="box-body box-profile">
+					<ul class="list-group list-group-unbordered">
+						<li class="list-group-item">
+							<span class="red-links-profile"> <b>Nationality:</b><a class="pull-right">Nigerian</a> </span>
+						</li>
+						<li class="list-group-item">
+							<span class="red-links-profile"> <b>Registered:</b><a class="pull-right"><%= current_user.created_at.strftime("%b - %Y")%></a> </span>
+						</li>
+					</ul>
+				</div>
+
+				<div class="box-body">
+
+				</div><!-- /.box-body -->
+			</div><!-- /.box -->
+		</div><!-- /.col -->
+
+		<div class="col-md-9">
+			<div class="nav-tabs-custom">
+				<div class="tab-content">
+					<div class="active tab-pane" id="settings">
+						<section class="content">
+							<div class="row">
+								<div class="">
+									<div class="box-body">
+										<div class="row" style="margin-top: 10px;">
+											<div class="col-md-12">
+												<div class="box box-primary">
+													<% flash.each do |key, value| %>
+													<div class="box-body">
+														<div class="alert alert-warning alert-dismissable">
+															<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+																&times;
+															</button>
+															<h4><i class="icon fa fa-warning"></i> Error Alert!</h4>
+															<%= value %>
+														</div>
+													</div><!-- /.box-body -->
+													<% end %>
+
+													<%= simple_form_for @user, url: {:action => 'change_password', :id => @user.id}, :html => {:method => :put, :class => 'form-horizontal' } do |f| %>
+
+													<% if @user.errors.any? %>
+													<div class="box-body">
+														<ul>
+															<% @user.errors.full_messages.each do |msg| %>
+															<li>
+																<%= msg %>
+															</li>
+															<% end %>
+														</ul>
+													</div><!-- /.box-body -->
+													<% end %>
+													<div class="modal-header">
+														<h4 class="modal-title">ACCOUNT PROFILE</h4>
+													</div>
+													<div class="timeline-body">
+														<div class="modal-body">
+															<div class="box-body">
+																<!-- Horizontal Form -->
+																<!-- form start -->
+																<div class="form-group">
+																	<label for="inputEmail3" class="col-sm-3 control-label">User Photo:</label>
+																	<div class="col-sm-4">
+																		<%= f.file_field :photo, class: 'btn btn-default pull-left' %>
+																	</div>
+																</div>
+
+																<div class="form-group">
+																	<label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+																	<div class="col-sm-7">
+																		<div class="form-control" id="inputEmail3">
+																			<%= @user.email if @user.email%>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="form-group">
+																	<label for="inputEmail3" class="col-sm-3 control-label">Change Password</label>
+																	<div class="col-sm-7">
+																		<%= f.input :password, :required => false, label: false, :placeholder => 'Leave if not needed', input_html: { class: 'form-control', id: 'inputEmail3' }%>
+																	</div>
+																</div>
+
+																<div class="form-group">
+																	<label for="inputEmail3" class="col-sm-3 control-label">Confirm Password</label>
+																	<div class="col-sm-7">
+																		<%= f.input :password_confirmation, :required => false, label: false, :placeholder => 'Retype - Password', input_html: { class: 'form-control', id: 'inputEmail3' }%>
+																	</div>
+																</div>
+
+																<div class="form-group">
+																	<div class="col-sm-offset-3 col-sm-10">
+																		<%= f.submit "Update Profile", class: "btn btn-danger" %>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<% end %>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+						</section>
+					</div><!-- /.tab-pane -->
+				</div><!-- /.tab-content -->
+			</div><!-- /.nav-tabs-custom -->
+		</div><!-- /.col -->
+	</div>
+</section>

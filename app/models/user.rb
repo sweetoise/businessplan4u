@@ -18,9 +18,16 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password, :on=>[:create, :update], :message => 'Password confirmation does not match Password'
 
   validates_length_of :password, :within => Devise.password_length, :allow_blank => true
-
-  has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "80x100>", :pix => "180x150>", :admin_size => "128x128>", :small => "30x35>" }, :default_url => ""
-  validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/, :message => 'Invalid Photo Format e.g [ image.jpeg/jpg/png ]'
+  
+  has_attached_file :photo,
+                    :storage => :dropbox,
+                    :dropbox_credentials => "#{Rails.root}/config/dropbox_config.yml",
+                    :styles => { :medium => "300x300>", :thumb => "80x100>", :pix => "180x150>", :admin_size => "128x128>", :small => "30x35>" },
+                    :default_url => "",
+                    :dropbox_options => {
+                    :path => proc { |style| "#{style}/#{id}_#{image.original_filename}" }
+  }
+  validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/, :message => 'Invalid Image Format e.g [ image.jpeg/jpg/png ]'
 
   private
   def self.find_first_by_auth_conditions(warden_conditions)
